@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICD Connect PWA - Super Admin Setup Guide</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1976d2;
+            text-align: center;
+            border-bottom: 3px solid #1976d2;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #1976d2;
+            border-left: 4px solid #1976d2;
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+        }
+        .toc {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc li {
+            margin: 8px 0;
+        }
+        .toc a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border-left: 4px solid #1976d2;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+            margin: 15px 0;
+        }
+        .success {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #1976d2;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+        .step {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #2196f3;
+        }
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+                padding: 20px;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .toc {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="emoji">🏢</span> ICD Connect PWA - Super Admin Setup Guide</h1>
+        
+        <div class="toc">
+            <h3>📋 Table of Contents</h3>
+            <ul>
+                <li><a href="#initial-setup">1. Initial Setup</a></li>
+                <li><a href="#super-admin-access">2. Super Admin Access</a></li>
+                <li><a href="#tenant-management">3. Tenant Management</a></li>
+                <li><a href="#business-customization">4. Business Customization</a></li>
+                <li><a href="#domain-configuration">5. Domain Configuration</a></li>
+                <li><a href="#feature-management">6. Feature Management</a></li>
+                <li><a href="#pwa-deployment">7. PWA Deployment</a></li>
+                <li><a href="#troubleshooting">8. Troubleshooting</a></li>
+            </ul>
+        </div>
+
+        <h2 id="initial-setup"><span class="emoji">🚀</span> Initial Setup</h2>
+        
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>Node.js (v14 or higher)</li>
+            <li>npm or yarn</li>
+            <li>Domain names for your businesses</li>
+            <li>SSL certificates (required for PWA)</li>
+        </ul>
+
+        <h3>Installation Steps</h3>
+        
+        <div class="step">
+            <strong>1. Clone and Install</strong>
+            <pre><code>git clone &lt;repository-url&gt;
+cd ICD
+npm install
+cd client && npm install</code></pre>
+        </div>
+
+        <div class="step">
+            <strong>2. Start Development Servers</strong>
+            <pre><code># Terminal 1 - Backend
+npm run server
+
+# Terminal 2 - Frontend
+cd client && npm start</code></pre>
+        </div>
+
+        <div class="step">
+            <strong>3. Access the Platform</strong>
+            <ul>
+                <li>Frontend: <code>http://localhost:3000</code></li>
+                <li>Backend API: <code>http://localhost:5001</code></li>
+            </ul>
+        </div>
+
+        <h2 id="super-admin-access"><span class="emoji">👑</span> Super Admin Access</h2>
+        
+        <div class="highlight">
+            <h3>Login Credentials</h3>
+            <ul>
+                <li><strong>Email:</strong> <code>superadmin@icd.com</code></li>
+                <li><strong>Password:</strong> <code>superadmin123</code></li>
+            </ul>
+        </div>
+
+        <h3>Super Admin Capabilities</h3>
+        <ul>
+            <li>✅ Create and manage all tenants</li>
+            <li>✅ Configure custom domains and subdomains</li>
+            <li>✅ Set feature permissions per business</li>
+            <li>✅ Manage system-wide settings</li>
+            <li>✅ Monitor all tenant activities</li>
+            <li>✅ Access tenant management dashboard</li>
+        </ul>
+
+        <h2 id="tenant-management"><span class="emoji">🏢</span> Tenant Management</h2>
+        
+        <h3>Creating a New Business Tenant</h3>
+        
+        <div class="step">
+            <strong>1. Login as Super Admin</strong>
+            <ul>
+                <li>Navigate to <code>http://localhost:3000</code></li>
+                <li>Login with super admin credentials</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>2. Access Tenant Management</strong>
+            <ul>
+                <li>Click "Tenant Management" in the navigation menu</li>
+                <li>Click "Add Tenant" button</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>3. Fill Tenant Information</strong>
+        </div>
+
+        <h3>Tenant Configuration Example</h3>
+        <pre><code>{
+  "name": "ABC Company",
+  "domain": "abc.com",
+  "subdomain": "abc",
+  "customDomain": "app.abc.com",
+  "theme": {
+    "primaryColor": "#1976d2",
+    "secondaryColor": "#dc004e",
+    "companyName": "ABC Company",
+    "tagline": "Your Success Partner",
+    "logo": "/abc-logo.png",
+    "favicon": "/abc-favicon.ico"
+  },
+  "features": {
+    "messaging": true,
+    "training": true,
+    "tests": true,
+    "leaderboard": true,
+    "salesTracker": true,
+    "stars": true,
+    "schedules": true
+  },
+  "settings": {
+    "maxUsers": 50,
+    "maxStorage": "500MB",
+    "customBranding": true,
+    "whiteLabel": false
+  }
+}</code></pre>
+
+        <h3>Tenant Configuration Options</h3>
+        
+        <h4>Basic Information</h4>
+        <ul>
+            <li><strong>Name:</strong> Internal name for the tenant</li>
+            <li><strong>Domain:</strong> Primary domain (e.g., <code>company.com</code>)</li>
+            <li><strong>Subdomain:</strong> Subdomain prefix (e.g., <code>company.icdconnect.com</code>)</li>
+            <li><strong>Custom Domain:</strong> Full custom domain (e.g., <code>app.company.com</code>)</li>
+        </ul>
+
+        <h4>Theme Customization</h4>
+        <ul>
+            <li><strong>Primary Color:</strong> Main brand color (hex code)</li>
+            <li><strong>Secondary Color:</strong> Accent color (hex code)</li>
+            <li><strong>Company Name:</strong> Display name in the app</li>
+            <li><strong>Tagline:</strong> Company slogan or description</li>
+            <li><strong>Logo:</strong> URL to company logo (192x192px recommended)</li>
+            <li><strong>Favicon:</strong> URL to company favicon (32x32px)</li>
+        </ul>
+
+        <h4>Feature Toggles</h4>
+        <ul>
+            <li><strong>Messaging:</strong> Team communication features</li>
+            <li><strong>Training:</strong> Training module uploads and management</li>
+            <li><strong>Tests:</strong> Knowledge testing system</li>
+            <li><strong>Leaderboard:</strong> Sales leaderboard functionality</li>
+            <li><strong>Sales Tracker:</strong> Sales logging and tracking</li>
+            <li><strong>Stars:</strong> Reward system</li>
+            <li><strong>Schedules:</strong> Schedule management</li>
+        </ul>
+
+        <h4>Settings</h4>
+        <ul>
+            <li><strong>Max Users:</strong> Maximum number of users allowed</li>
+            <li><strong>Max Storage:</strong> Storage limit for uploads</li>
+            <li><strong>Custom Branding:</strong> Enable full white-label branding</li>
+            <li><strong>White Label:</strong> Remove all ICD Connect branding</li>
+        </ul>
+
+        <h2 id="business-customization"><span class="emoji">🎨</span> Business Customization</h2>
+        
+        <h3>Step-by-Step Business Setup</h3>
+        
+        <div class="step">
+            <strong>1. Create Admin Account for Business</strong>
+            <pre><code>{
+  "email": "admin@abc.com",
+  "password": "admin123",
+  "name": "Business Admin",
+  "role": "admin",
+  "teamId": "abc_team",
+  "position": "Business Owner"
+}</code></pre>
+        </div>
+
+        <div class="step">
+            <strong>2. Configure Branding</strong>
+            <ul>
+                <li>Upload company logo to <code>/client/public/</code> directory</li>
+                <li>Update favicon with company branding</li>
+                <li>Set primary and secondary colors</li>
+                <li>Customize company name and tagline</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>3. Set Feature Permissions</strong>
+            <ul>
+                <li>Enable/disable features based on business needs</li>
+                <li>Configure user limits and storage quotas</li>
+                <li>Set up custom branding options</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>4. Domain Configuration</strong>
+            <ul>
+                <li>Configure DNS settings for custom domains</li>
+                <li>Set up SSL certificates</li>
+                <li>Test domain routing</li>
+            </ul>
+        </div>
+
+        <h3>Example Business Configurations</h3>
+        
+        <h4>Small Business (10-25 users)</h4>
+        <pre><code>{
+  "name": "Small Business Inc",
+  "theme": {
+    "primaryColor": "#2196f3",
+    "secondaryColor": "#ff9800",
+    "companyName": "Small Business Inc",
+    "tagline": "Growing Together"
+  },
+  "features": {
+    "messaging": true,
+    "training": true,
+    "tests": true,
+    "leaderboard": true,
+    "salesTracker": true,
+    "stars": false,
+    "schedules": true
+  },
+  "settings": {
+    "maxUsers": 25,
+    "maxStorage": "250MB",
+    "customBranding": false,
+    "whiteLabel": false
+  }
+}</code></pre>
+
+        <h4>Enterprise Business (100+ users)</h4>
+        <pre><code>{
+  "name": "Enterprise Corp",
+  "theme": {
+    "primaryColor": "#2e7d32",
+    "secondaryColor": "#f57c00",
+    "companyName": "Enterprise Corp",
+    "tagline": "Excellence in Every Detail"
+  },
+  "features": {
+    "messaging": true,
+    "training": true,
+    "tests": true,
+    "leaderboard": true,
+    "salesTracker": true,
+    "stars": true,
+    "schedules": true
+  },
+  "settings": {
+    "maxUsers": 200,
+    "maxStorage": "2GB",
+    "customBranding": true,
+    "whiteLabel": true
+  }
+}</code></pre>
+
+        <h2 id="domain-configuration"><span class="emoji">🌐</span> Domain Configuration</h2>
+        
+        <h3>Subdomain Setup</h3>
+        
+        <div class="step">
+            <strong>1. DNS Configuration</strong>
+            <pre><code>Type: CNAME
+Name: company
+Value: icdconnect.com</code></pre>
+        </div>
+
+        <div class="step">
+            <strong>2. Access URL</strong>
+            <ul>
+                <li><code>company.icdconnect.com</code></li>
+            </ul>
+        </div>
+
+        <h3>Custom Domain Setup</h3>
+        
+        <div class="step">
+            <strong>1. DNS Configuration</strong>
+            <pre><code>Type: A
+Name: app
+Value: [YOUR_SERVER_IP]</code></pre>
+        </div>
+
+        <div class="step">
+            <strong>2. SSL Certificate</strong>
+            <ul>
+                <li>Install SSL certificate for <code>app.company.com</code></li>
+                <li>Configure HTTPS redirect</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>3. Server Configuration</strong>
+            <ul>
+                <li>Update nginx/apache configuration</li>
+                <li>Set up reverse proxy to port 5001</li>
+            </ul>
+        </div>
+
+        <h3>Example Nginx Configuration</h3>
+        <pre><code>server {
+    listen 80;
+    server_name app.company.com;
+    return 301 https://$server_name$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name app.company.com;
+    
+    ssl_certificate /path/to/certificate.crt;
+    ssl_certificate_key /path/to/private.key;
+    
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+    
+    location /api {
+        proxy_pass http://localhost:5001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}</code></pre>
+
+        <h2 id="feature-management"><span class="emoji">⚙️</span> Feature Management</h2>
+        
+        <h3>Enabling/Disabling Features</h3>
+        
+        <h4>Via Tenant Management Dashboard</h4>
+        <div class="step">
+            <ol>
+                <li>Go to Tenant Management</li>
+                <li>Click "Edit" on the tenant</li>
+                <li>Toggle features on/off</li>
+                <li>Save changes</li>
+            </ol>
+        </div>
+
+        <h4>Via API</h4>
+        <pre><code>curl -X PUT http://localhost:5001/api/tenants/tenant_id \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -d '{
+    "features": {
+      "messaging": true,
+      "training": false,
+      "tests": true,
+      "leaderboard": true,
+      "salesTracker": true,
+      "stars": false,
+      "schedules": true
+    }
+  }'</code></pre>
+
+        <h3>Feature-Specific Configuration</h3>
+        
+        <h4>Messaging</h4>
+        <ul>
+            <li>Enable team communication</li>
+            <li>Configure message retention</li>
+            <li>Set up notification preferences</li>
+        </ul>
+
+        <h4>Training</h4>
+        <ul>
+            <li>Upload training modules</li>
+            <li>Create knowledge tests</li>
+            <li>Track completion rates</li>
+        </ul>
+
+        <h4>Sales Tracking</h4>
+        <ul>
+            <li>Configure sales targets</li>
+            <li>Set up bonus thresholds</li>
+            <li>Enable leaderboard</li>
+        </ul>
+
+        <h4>Rewards System</h4>
+        <ul>
+            <li>Configure star rewards</li>
+            <li>Set up achievement criteria</li>
+            <li>Manage reward redemption</li>
+        </ul>
+
+        <h2 id="pwa-deployment"><span class="emoji">📱</span> PWA Deployment</h2>
+        
+        <h3>Production Build</h3>
+        <pre><code># Build frontend
+cd client && npm run build
+
+# Start production server
+npm start</code></pre>
+
+        <h3>PWA Configuration</h3>
+        
+        <h4>Manifest Updates</h4>
+        <pre><code>{
+  "short_name": "Company Name",
+  "name": "Company Name - Management Platform",
+  "description": "Custom management platform for Company Name",
+  "theme_color": "#1976d2",
+  "background_color": "#ffffff"
+}</code></pre>
+
+        <h4>Service Worker</h4>
+        <ul>
+            <li>Configure caching strategies</li>
+            <li>Set up offline functionality</li>
+            <li>Enable push notifications</li>
+        </ul>
+
+        <h3>Deployment Checklist</h3>
+        <div class="highlight">
+            <ul>
+                <li>✅ Update manifest.json with production URLs</li>
+                <li>✅ Configure service worker for production</li>
+                <li>✅ Set up HTTPS (required for PWA)</li>
+                <li>✅ Test offline functionality</li>
+                <li>✅ Verify install prompts work</li>
+                <li>✅ Configure domain routing</li>
+                <li>✅ Set up SSL certificates</li>
+                <li>✅ Test tenant isolation</li>
+            </ul>
+        </div>
+
+        <h2 id="troubleshooting"><span class="emoji">🔧</span> Troubleshooting</h2>
+        
+        <h3>Common Issues</h3>
+        
+        <h4>1. PWA Not Installing</h4>
+        <div class="warning">
+            <strong>Problem:</strong> App doesn't show install prompt<br>
+            <strong>Solution:</strong>
+            <ul>
+                <li>Ensure HTTPS is enabled</li>
+                <li>Check manifest.json configuration</li>
+                <li>Verify service worker registration</li>
+            </ul>
+        </div>
+
+        <h4>2. Domain Not Working</h4>
+        <div class="warning">
+            <strong>Problem:</strong> Custom domain not routing correctly<br>
+            <strong>Solution:</strong>
+            <ul>
+                <li>Check DNS configuration</li>
+                <li>Verify SSL certificate</li>
+                <li>Test server configuration</li>
+            </ul>
+        </div>
+
+        <h4>3. Tenant Not Loading</h4>
+        <div class="warning">
+            <strong>Problem:</strong> Tenant-specific content not appearing<br>
+            <strong>Solution:</strong>
+            <ul>
+                <li>Check tenant configuration</li>
+                <li>Verify domain mapping</li>
+                <li>Test API endpoints</li>
+            </ul>
+        </div>
+
+        <h4>4. Features Not Available</h4>
+        <div class="warning">
+            <strong>Problem:</strong> Features disabled for tenant<br>
+            <strong>Solution:</strong>
+            <ul>
+                <li>Check feature toggles in tenant settings</li>
+                <li>Verify user permissions</li>
+                <li>Update tenant configuration</li>
+            </ul>
+        </div>
+
+        <h3>Debug Commands</h3>
+        
+        <h4>Check Tenant Configuration</h4>
+        <pre><code>curl http://localhost:5001/api/tenants/current \
+  -H "Host: app.company.com"</code></pre>
+
+        <h4>Test PWA Installation</h4>
+        <pre><code>// In browser console
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => console.log('SW registered'))
+    .catch(error => console.log('SW registration failed'));
+}</code></pre>
+
+        <h4>Verify Domain Routing</h4>
+        <pre><code># Test domain resolution
+nslookup app.company.com
+
+# Test server response
+curl -I http://app.company.com</code></pre>
+
+        <h2><span class="emoji">📊</span> Monitoring & Analytics</h2>
+        
+        <h3>PWA Metrics</h3>
+        <ul>
+            <li>Install rates</li>
+            <li>Offline usage</li>
+            <li>Performance metrics</li>
+            <li>User engagement</li>
+        </ul>
+
+        <h3>Multi-Tenant Analytics</h3>
+        <ul>
+            <li>Tenant usage statistics</li>
+            <li>Feature adoption rates</li>
+            <li>Performance per tenant</li>
+            <li>Custom domain analytics</li>
+        </ul>
+
+        <h3>Monitoring Tools</h3>
+        <ul>
+            <li>Google Analytics</li>
+            <li>PWA-specific metrics</li>
+            <li>Server monitoring</li>
+            <li>Error tracking</li>
+        </ul>
+
+        <h2><span class="emoji">🎯</span> Best Practices</h2>
+        
+        <h3>Tenant Management</h3>
+        <ul>
+            <li>Use descriptive names for easy identification</li>
+            <li>Set appropriate user limits based on business size</li>
+            <li>Configure features based on business needs</li>
+            <li>Regular backups of tenant configurations</li>
+            <li>Monitor usage and adjust limits as needed</li>
+        </ul>
+
+        <h3>PWA Optimization</h3>
+        <ul>
+            <li>Optimize images for fast loading</li>
+            <li>Use efficient caching strategies</li>
+            <li>Minimize bundle size for faster installation</li>
+            <li>Test offline functionality regularly</li>
+            <li>Monitor performance metrics</li>
+        </ul>
+
+        <h3>Security</h3>
+        <ul>
+            <li>Use strong passwords for admin accounts</li>
+            <li>Enable HTTPS for all domains</li>
+            <li>Regular security updates</li>
+            <li>Monitor access logs</li>
+            <li>Backup data regularly</li>
+        </ul>
+
+        <div class="success">
+            <h2><span class="emoji">🎉</span> Congratulations!</h2>
+            <p>You now have a fully functional multi-tenant PWA platform ready to serve multiple businesses with their own customized experiences.</p>
+        </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #1976d2;">
+
+        <div style="text-align: center; color: #666; margin-top: 40px;">
+            <p><strong>Built with ❤️ for Independent Contract Distributors</strong></p>
+            <p>Last updated: December 2024 | Version: 1.0.0</p>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for table of contents links
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add print functionality
+        function printGuide() {
+            window.print();
+        }
+
+        // Add keyboard shortcut for printing (Ctrl/Cmd + P)
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                printGuide();
+            }
+        });
+    </script>
+</body>
+</html>
